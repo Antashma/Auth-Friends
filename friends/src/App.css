@@ -15,19 +15,37 @@
 
 .App-header {
   background: #282c34;
-  background: linear-gradient(90deg, hotpink, blueviolet);
+  background: linear-gradient(100deg, hotpink 30%, aqua);
   min-height: 50vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  text-shadow: 2px 2px 3px #333;
   color: white;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+nav {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-around;
+  font-weight: bold;
+}
+
+ul {
+  text-align: left;
+}
+
+h1 {
+  padding: 15px;
+  border: 5px solid white;
+  border-radius: 5px;
+  text-shadow: 2px 2px 3px #333;
+  box-shadow: 2px 2px 3px #333;
 }
 
 @keyframes App-logo-spin {
