@@ -1,11 +1,13 @@
 import React from 'react';
 import {Link, Route, Switch} from 'react-router-dom';
-import Login from './components/Login'
-import Friends from './components/Friends'
 
-import './App.css';
+import Login from './components/Login'
+import FriendList from './components/FriendList'
 import LandingPage from './components/LandingPage';
 import PrivateRoute from './components/PrivateRoute';
+
+import './App.css';
+
 function App() {
   return (
     <div className="App">
@@ -19,7 +21,7 @@ function App() {
       </nav>
       <Switch>
         
-        <PrivateRoute path='/friends' component={Friends}/>
+        <PrivateRoute path='/friends' component={FriendList}/>
         <Route path='/login' component={Login}/>
         <Route path='/' component={LandingPage} />
         <Route path='/*' render={() => <p>Page not found!</p> }/>
