@@ -5,6 +5,7 @@ import Friends from './components/Friends'
 
 import './App.css';
 import LandingPage from './components/LandingPage';
+import PrivateRoute from './components/PrivateRoute';
 function App() {
   return (
     <div className="App">
@@ -18,7 +19,7 @@ function App() {
       </nav>
       <Switch>
         
-        <Route path='/friends' component={Friends}/>
+        <PrivateRoute path='/friends' component={Friends}/>
         <Route path='/login' component={Login}/>
         <Route path='/' component={LandingPage} />
         <Route path='/*' render={() => <p>Page not found!</p> }/>

@@ -1,18 +1,30 @@
 import React, { useEffect, useState } from 'react';
+import {axiosWithAuth} from '../api/axiosWithAuth'
 
-const Login = () => {
+const Login = (props) => {
     const [form, setForm] = useState({
         username: '',
         password: ''
     });
 
     const handleChange = (e) => {
-        setForm({[e.target.name]: e.target.value});
+        setForm({...form, [e.target.name]: e.target.value});
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e) => { //login
         console.log('sg: login.js : handleSubmit : form submitted: ',form)
         e.preventDefault();
+        axiosWithAuth()
+            .post('http://localhost:5000/api/login', form)
+            .then(res => {
+                console.log('sg: Login.js : handleSubmit : axoisWithAuth res', res);
+                localStorage.setItem('token', res.data.payload)
+                props.history.push('./friends')
+            })
+            .catch(err => {
+                console.error('There was an error logging in: ', err)
+            })
+
     }
 
 //print form value 
