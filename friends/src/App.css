@@ -33,7 +33,13 @@ nav {
   padding: 20px 0;
   display: flex;
   justify-content: space-around;
+  border-bottom: 1px solid silver;
+}
+
+nav a {
   font-weight: bold;
+  text-transform: uppercase;
+  color: darkturquoise;
 }
 
 ul {
@@ -46,6 +52,27 @@ h1 {
   border-radius: 5px;
   text-shadow: 2px 2px 3px #333;
   box-shadow: 2px 2px 3px #333;
+}
+
+.friends-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.friend-names {
+  width: 50%;
+}
+
+.friend-names a {
+  text-decoration: none;
+  background: darkturquoise;
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.friend-details {  
+  width: 50%;
 }
 
 @keyframes App-logo-spin {

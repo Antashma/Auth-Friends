@@ -20,12 +20,9 @@ function App() {
         <Link to='/login'>Login </Link>
       </nav>
       <Switch>
-        
         <PrivateRoute path='/friends' component={FriendList}/>
         <Route path='/login' component={Login}/>
         <Route path='/' component={LandingPage} />
-        <Route path='/*' render={() => <p>Page not found!</p> }/>
-        
       </Switch>
     </div>
   );
