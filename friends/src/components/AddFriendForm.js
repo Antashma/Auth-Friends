@@ -1,14 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { axiosWithAuth } from '../api/axiosWithAuth';
 
 
 const AddFriendForm = (props) => {
-    const [friends, setFriends] = useState({
-        name: ' ',
-        age: 1, 
-        email: '',
-    })
-
     const [newFriend, setNewFriend] = useState({
         name: 'Archie Andrews',
         age: 1, 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {axiosWithAuth} from '../api/axiosWithAuth'
 
 const Login = (props) => {
@@ -12,12 +12,10 @@ const Login = (props) => {
     }
 
     const handleSubmit = (e) => { //login
-        console.log('sg: login.js : handleSubmit : form submitted: ',form)
         e.preventDefault();
         axiosWithAuth()
             .post('http://localhost:5000/api/login', form)
             .then(res => {
-                console.log('sg: Login.js : handleSubmit : axoisWithAuth res', res);
                 localStorage.setItem('token', res.data.payload)
                 props.history.push('./friends')
             })
@@ -27,14 +25,10 @@ const Login = (props) => {
 
     }
 
-//print form value 
-    useEffect(() => {console.log('sg: login.js : useeffect: form value : ', form)}, [form]) 
-    
-
     return (
-        <div>
+        <div className='login-container'>
             <form onSubmit={handleSubmit}>
-                <label>Username:
+                <label>Username: &nbsp;
                     <input 
                         type='text' 
                         name='username' 
@@ -42,7 +36,8 @@ const Login = (props) => {
                         onChange={handleChange}
                     />
                 </label>
-                <label>Password: 
+                <br />
+                <label>Password: &nbsp;
                     <input 
                         type='password' 
                         name='password' 
@@ -50,6 +45,7 @@ const Login = (props) => {
                         onChange={handleChange}
                     />
                 </label>
+                <br />
                 <button>Login</button>
             </form>
         </div>

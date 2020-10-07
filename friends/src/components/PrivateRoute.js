@@ -1,7 +1,7 @@
 import React from 'react';
 import {Route, Redirect} from 'react-router-dom';
 
-const userIsAuthenticated = () => {
+export const userIsAuthenticated = () => {
     return localStorage.getItem('token') !== null;
 }
 

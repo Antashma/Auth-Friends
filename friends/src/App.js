@@ -11,15 +11,21 @@ import AddFriendForm from './components/AddFriendForm';
 import './App.css';
 
 function App() {
+
+  const logout = () => {
+    localStorage.clear();
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-       <h1>Friends Collector</h1>
+       <h1>Friends Collection</h1>
       </header>
       <nav>
         <Link to='/'>Home </Link>
         <Link to='/friends'>My Friends </Link>
         <Link to='/login'>Login </Link>
+        <Link to='/login' onClick={logout}>Logout</Link>
       </nav>
       <Switch>
         <PrivateRoute path='/friends' component={FriendList}/>

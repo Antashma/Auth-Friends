@@ -12,10 +12,7 @@ const FriendList = () => {
     useEffect(()=> {
         axiosWithAuth()
             .get('http://localhost:5000/api/friends')
-            .then(res => {
-                console.log('sg: Friends.js : useEffect : getFriends res: ', res)
-                setFriends(...friends, res.data)
-            })
+            .then(res => setFriends(...friends, res.data))
             .catch(err => {
                 console.error('there was an error setting friends :', err)
             })
@@ -23,10 +20,9 @@ const FriendList = () => {
 
     return (
         <section>
-            <nav>
-                <Link to='/add-friend' >Add Friend</Link>
-            </nav>
             <h2>My Friends</h2>
+            <p>Click on your Friend's name below for more details.</p>
+            <p>Have a new Friend? <Link to='/add-friend'>Click here</Link> to add them.</p>
             <div className='friends-container'>
                 <div className='friend-names'>
                     {friends.map( friend => {
@@ -44,7 +40,7 @@ const FriendList = () => {
                     render={() => <FriendDetails data={friends} />} 
                 /> 
             </div>
-           
+            <Link className='add-friend-btn' to='/add-friend' >Add Friend</Link>
         </section>
     );
 }

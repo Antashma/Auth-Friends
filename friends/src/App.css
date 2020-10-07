@@ -23,6 +23,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  border-bottom:1px solid silver;
 }
 
 .App-link {
@@ -30,16 +31,26 @@
 }
 
 nav {
-  padding: 20px 0;
+  height: 50px;
   display: flex;
   justify-content: space-around;
   border-bottom: 1px solid silver;
 }
 
 nav a {
+  display: inline-block;
+  line-height: 50px;
   font-weight: bold;
   text-transform: uppercase;
   color: darkturquoise;
+  text-decoration: none;
+  width: 100%;
+  height:100%;
+}
+
+nav a:hover {
+  background: darkturquoise;
+  color: white;
 }
 
 ul {
@@ -75,11 +86,10 @@ h1 {
   width: 50%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.login-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
 }
