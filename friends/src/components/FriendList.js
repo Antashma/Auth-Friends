@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import FriendDetails from './FriendDetails'
 import {Link, Route} from 'react-router-dom';
+
+import FriendDetails from './FriendDetails'
+
 import {axiosWithAuth} from '../api/axiosWithAuth';
 
 
@@ -22,28 +24,25 @@ const FriendList = () => {
     return (
         <section>
             <nav>
-                <Link to='/add' >Add Friend</Link>
+                <Link to='/add-friend' >Add Friend</Link>
             </nav>
             <h2>My Friends</h2>
             <div className='friends-container'>
                 <div className='friend-names'>
-                    {friends.map(
-                        friend => {
-                            return ( 
-                                <p><Link 
-                                    to={`/friends/${friend.id}`}
-                                    key={friend.id}
-                                >
+                    {friends.map( friend => {
+                        return ( 
+                            <p key={friend.id}>
+                                <Link to={`/friends/${friend.id}`}>
                                     {friend.name}
-                                </Link></p>
-                            )
-                        })
-                    }
+                                </Link>
+                            </p>
+                        )
+                    })}
                 </div>
                 <Route 
                     path='/friends/:id' 
                     render={() => <FriendDetails data={friends} />} 
-                />    
+                /> 
             </div>
            
         </section>

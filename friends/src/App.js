@@ -5,6 +5,8 @@ import Login from './components/Login'
 import FriendList from './components/FriendList'
 import LandingPage from './components/LandingPage';
 import PrivateRoute from './components/PrivateRoute';
+import AddFriendForm from './components/AddFriendForm';
+
 
 import './App.css';
 
@@ -21,8 +23,12 @@ function App() {
       </nav>
       <Switch>
         <PrivateRoute path='/friends' component={FriendList}/>
+        <Route path='/add-friend'
+              component={AddFriendForm}
+        />   
         <Route path='/login' component={Login}/>
         <Route path='/' component={LandingPage} />
+
       </Switch>
     </div>
   );
