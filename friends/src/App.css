@@ -1,0 +1,95 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background: #282c34;
+  background: linear-gradient(100deg, hotpink 30%, aqua);
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  border-bottom:1px solid silver;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+nav {
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid silver;
+}
+
+nav a {
+  display: inline-block;
+  line-height: 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: darkturquoise;
+  text-decoration: none;
+  width: 100%;
+  height:100%;
+}
+
+nav a:hover {
+  background: darkturquoise;
+  color: white;
+}
+
+ul {
+  text-align: left;
+}
+
+h1 {
+  padding: 15px;
+  border: 5px solid white;
+  border-radius: 5px;
+  text-shadow: 2px 2px 3px #333;
+  box-shadow: 2px 2px 3px #333;
+}
+
+.friends-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.friend-names {
+  width: 50%;
+}
+
+.friend-names a {
+  text-decoration: none;
+  background: darkturquoise;
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.friend-details {  
+  width: 50%;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
